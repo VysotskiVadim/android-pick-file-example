@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import dev.vadzimv.pickfile.example.OpenFileResult
 import dev.vadzimv.pickfile.example.R
 import dev.vadzimv.pickfile.example.openDocumentPicker
@@ -48,6 +49,8 @@ class MainFragment : Fragment() {
     }
 
     private fun fileIsOpened(fileName: String, content: InputStream) {
+        val fileInfo = requireView().findViewById<TextView>(R.id.openedTextInfo)
+        fileInfo.text = "Opened file $fileName"
         content.close()
     }
 }
