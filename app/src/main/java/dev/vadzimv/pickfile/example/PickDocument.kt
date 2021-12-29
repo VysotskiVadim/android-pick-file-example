@@ -31,7 +31,6 @@ private fun Fragment.handleOpenDocumentResult(resultCode: Int, data: Intent?): O
                 try {
                     requireActivity().application.contentResolver.openInputStream(contentUri)
                 } catch (exception: FileNotFoundException) {
-                    //Timber.e(exception)
                     return OpenFileResult.ErrorOpeningFile
                 }
 
